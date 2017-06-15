@@ -26,7 +26,7 @@ function confirmPass(){
 	}
 };
 
-// -------------------- Task 2 ---------------------
+// -------------------- Task 2 ----------------------
 
 var boxes = document.getElementsByClassName("color");
 
@@ -63,3 +63,23 @@ function boxRun (event){
 	wrapper.style.left = (startX + 10) + "px";
 	wrapper.style.top = (startY + 10) + "px";
 }
+
+
+// --------------------Modal window ------------------
+
+var overlay = document.getElementById("overlay"),
+	showModalBtn = document.getElementById("show"),
+	modal = document.getElementById("modal");
+
+
+showModalBtn.addEventListener("click", openModal);
+
+function openModal(){
+	overlay.className = "cover";
+	modal.className = "opened-modal";
+}
+
+overlay.addEventListener("click", function(){
+	overlay.className = "none";
+	modal.className = "hidden-modal";
+});
